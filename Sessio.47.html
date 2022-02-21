@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(red,rgb(220, 20, 103));
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            color: white;
+        }
+        img {
+            width: 300px;
+            height: 200px;
+            border: 10px solid white;
+            display: none;
+            
+        }
+
+        #riddle {
+            animation-name: riddle;
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            animation-direction: alternate;
+           
+            }
+        
+
+        @keyframes riddle {
+            from {
+                transform: scale(1);
+                color: red;
+                border: 2px red solid;
+            }
+            to {
+              transform: scale(1.4);
+                color: white;
+                border: 2px orange solid;
+            }
+        }
+
+        #sub {
+            height: 30px;
+            width: 120px;
+            background-color: orangered;
+            color: white;
+            font-weight: bold;
+            border: 1px white solid;
+        }
+
+        #hint {
+            height: 50px;
+            width: 50px;
+            background-color:red;
+            color: white;
+            font-weight: bold;
+            border: 1px white solid;
+            border-radius: 60%;
+        }
+
+        input {
+            border: 2px orange solid;
+        }
+
+        h2 {
+            animation-name: score;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes score {
+            from {
+                color: red;
+            }
+            to {
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="riddle">Riddle App</h1>
+        <h2 id="score">Score: 0</h2>
+    </header>
+    <h3>1. What has to be broken before you can use it?</h3>
+    <button id="hint"onclick="h1()">HINT!</button>&nbsp;&nbsp;
+    <input id="q1" type="text">&nbsp;&nbsp;
+    <button id="sub"onclick="q1()">Submit Answer</button>
+    
+    <h4 id="a1"></h4>
+    <img id="i1"src="https://www.thespruceeats.com/thmb/BYIt0Mw68z-eYOM_VmhbtuEYYO4=/3008x2000/filters:fill(auto,1)/scrambledeggscreamcheese-bc8a9f84e07944aab5f16b1ee8d36857.jpg" alt="">
+
+    <h3>2. I am tall when I am young but short when I am old. What am I?</h3>
+    <button id="hint"onclick="h2()">HINT!</button>&nbsp;&nbsp;
+    <input id="q2" type="text">&nbsp;&nbsp;
+    <button id="sub"onclick="q2()">Submit Answer</button>
+    
+    <h4 id="a2"></h4>
+    <img id="i2"src="https://miro.medium.com/max/1400/1*QwKGI3ddtSnAm1jnb8PVmA.jpeg" alt="">
+
+    <h3>3. What month of the year has 28 days?</h3>
+    <button id="hint" onclick="h3()">HINT!</button>&nbsp;&nbsp;
+    <input id="q3" type="text">&nbsp;&nbsp;
+    <button id="sub"onclick="q3()">Submit Answer</button>
+    
+    <h4 id="a3"></h4>
+    <img id="i3"src="https://img.freepik.com/free-vector/modern-new-year-calendar-template_1017-29096.jpg?size=626&ext=jpg" alt="">
+    <br><br><br>
+</body>
+<script>
+    var score = 0
+    function h1(){
+        document.getElementById("i1").style.display = "inline-block";
+        score= score - 0.5;
+            document.getElementById("score").innerText = 
+            "Score: "+ score
+
+    }
+    function q1(){
+        var q1 = document.getElementById("q1").value;
+        if(q1.toUpperCase()=="EGG"){
+            document.getElementById("a1").innerText =
+            "correct answer";
+            score= score + 1;
+            document.getElementById("score").innerText = 
+            "Score: "+ score
+        }
+        else{
+            document.getElementById("a1").innerText ="wrong answer";
+        }
+    }
+    function h2(){
+        document.getElementById("i2").style.display = "inline-block";
+        score= score - 0.5;
+            document.getElementById("score").innerText = 
+            "Score: "+ score
+    }
+    function q2(){
+        var q2 = document.getElementById("q2").value;
+        if(q2.toUpperCase()=="CANDLE"){
+            document.getElementById("a2").innerText =
+            "correct answer";
+            score= score + 1;
+            document.getElementById("score").innerText = 
+            "Score: "+ score
+        }
+        else{
+            document.getElementById("a2").innerText ="wrong answer";
+        }
+    }
+
+    function h3(){
+        document.getElementById("i3").style.display = "inline-block";
+        score= score - 0.5;
+            document.getElementById("score").innerText = 
+            "Score: "+ score
+    }
+    function q3(){
+        var q3 = document.getElementById("q3").value;
+        if(q3.toUpperCase()=="ALL"){
+            document.getElementById("a3").innerText =
+            "correct answer";
+            score= score + 1;
+            document.getElementById("score").innerText = 
+            "Score: "+ score
+        }
+        else{
+            document.getElementById("a3").innerText ="wrong answer";
+        }
+    }
+</script>
+</html>
